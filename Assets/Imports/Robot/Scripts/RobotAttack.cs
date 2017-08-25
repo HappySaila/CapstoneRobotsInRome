@@ -20,6 +20,15 @@ public class RobotAttack : MonoBehaviour {
 	void Update () {
 		UpdateFire ();
 		//draw debug ray
+
+		if (Input.GetMouseButtonDown (2)){
+			SpeechBubble.Instance.Display ("Welcome to this great game. \n This is cool.", true, false);
+		}
+
+		if (Input.GetMouseButtonDown (1)){
+			SpeechBubble.Instance.Display ("What ever you do. \n This is cool.", false, true);
+		}
+
 	}
 
 	void UpdateFire(){
