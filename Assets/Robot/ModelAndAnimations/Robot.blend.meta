@@ -1,0 +1,1224 @@
+fileFormatVersion: 2
+guid: 1d06e1c4cef0d49cabf8d0713ba23541
+timeCreated: 1503685825
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Body
+    100004: Body_0
+    100006: Hand_L
+    100008: Hand_R
+    100010: LArm_L
+    100012: LArm_R
+    100014: LFinger_L
+    100016: LFinger_R
+    100018: LThumb_L
+    100020: LThumb_R
+    100022: //RootNode
+    100024: Should_L
+    100026: Should_R
+    100028: UArm_L
+    100030: UArm_R
+    100032: UFinger_L
+    100034: UFinger_R
+    100036: UThumb_L
+    100038: UThumb_R
+    400000: Armature
+    400002: Body
+    400004: Body_0
+    400006: Hand_L
+    400008: Hand_R
+    400010: LArm_L
+    400012: LArm_R
+    400014: LFinger_L
+    400016: LFinger_R
+    400018: LThumb_L
+    400020: LThumb_R
+    400022: //RootNode
+    400024: Should_L
+    400026: Should_R
+    400028: UArm_L
+    400030: UArm_R
+    400032: UFinger_L
+    400034: UFinger_R
+    400036: UThumb_L
+    400038: UThumb_R
+    4300000: Body
+    7400000: Default Take
+    7400002: Dead
+    7400004: Idle1
+    7400006: Idle2
+    7400008: Idle3
+    7400010: Idle4
+    7400012: Idle5
+    7400014: LaborerBuild
+    7400016: LaborerSpin
+    7400018: LaborerWalk
+    7400020: MoveBackward
+    7400022: MoveBackwardLeft
+    7400024: MoveBackwardright
+    7400026: MoveForward
+    7400028: MoveForwardLeft
+    7400030: MoveForwardRight
+    9500000: //RootNode
+    13700000: Body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dead
+      takeName: Dead
+      firstFrame: -1
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle1
+      takeName: Idle1
+      firstFrame: -1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle2
+      takeName: Idle2
+      firstFrame: -1
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle3
+      takeName: Idle3
+      firstFrame: -1
+      lastFrame: 63
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle4
+      takeName: Idle4
+      firstFrame: -1
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle5
+      takeName: Idle5
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: LaborerBuild
+      takeName: LaborerBuild
+      firstFrame: -1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: LaborerSpin
+      takeName: LaborerSpin
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: LaborerWalk
+      takeName: LaborerWalk
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: MoveBackward
+      takeName: MoveBackward
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: MoveBackwardLeft
+      takeName: MoveBackwardLeft
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: MoveBackwardright
+      takeName: MoveBackwardright
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: MoveForward
+      takeName: MoveForward
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: MoveForwardLeft
+      takeName: MoveForwardLeft
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: MoveForwardRight
+      takeName: MoveForwardRight
+      firstFrame: -1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body_0
+        weight: 1
+      - path: Armature/Body_0/Should_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UFinger_L/LFinger_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_L/UArm_L/LArm_L/Hand_L/UThumb_L/LThumb_L
+        weight: 1
+      - path: Armature/Body_0/Should_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UFinger_R/LFinger_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R
+        weight: 1
+      - path: Armature/Body_0/Should_R/UArm_R/LArm_R/Hand_R/UThumb_R/LThumb_R
+        weight: 1
+      - path: Body
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
