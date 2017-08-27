@@ -10,6 +10,7 @@ public class AudienceAnimationScript : MonoBehaviour
 	Animator anim;
 
 	int cheer1Hash = Animator.StringToHash ("Cheer1");
+
 	int cheer2Hash = Animator.StringToHash ("Cheer2");
 	int cheer3Hash = Animator.StringToHash ("Cheer3");
 	int cheer4Hash = Animator.StringToHash ("Cheer4");
@@ -34,7 +35,8 @@ public class AudienceAnimationScript : MonoBehaviour
 		
 		if (Input.GetKeyDown (KeyCode.Y)) {
 			StartCoroutine (DelayedAnimationCheer (cheer1Hash));
-
+			//anim.SetBool (cheer11Hash, true);
+			//Debug.Log ("w");
 			//anim.SetTrigger(cheer1Hash);
 
 		} else if (Input.GetKeyDown (KeyCode.U)) {
