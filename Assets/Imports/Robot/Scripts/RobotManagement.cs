@@ -44,6 +44,7 @@ public class RobotManagement : MonoBehaviour {
 		robotMovement.Die ();
 		robotMovement.enabled = false;
 		hoverBase.enabled = false;
+		GetComponent <NavMeshAgent> ().enabled = false;
 
 		//stop attacking
 		robotAttack.enabled = false;

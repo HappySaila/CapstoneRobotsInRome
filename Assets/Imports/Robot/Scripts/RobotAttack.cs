@@ -62,7 +62,6 @@ public class RobotAttack : MonoBehaviour {
 	void Hit(GameObject target, Vector3 point){
 		if (target.tag == "Hittable"){
 			target.GetComponent <Rigidbody> ().AddForceAtPosition (-transform.forward * ramForce, point, ForceMode.VelocityChange);
-			print ("Running");
 			if (target.GetComponent <RobotManagement>() != null){
 				//the player has rammed a robot
 				target.GetComponent <RobotManagement> ().Die ();

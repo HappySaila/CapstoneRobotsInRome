@@ -76,6 +76,7 @@ public class RobotLaborerControl : MonoBehaviour {
 			agent.enabled = true;
 			target = collider.GetComponentInParent <RobotManagement>().isRed ? redConstructionSite : blueConstructionSite;
 			agent.SetDestination (target.position);
+			trigger.enabled = false;
 		}
 	}
 		
