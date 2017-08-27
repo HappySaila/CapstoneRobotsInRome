@@ -5,16 +5,26 @@ using UnityEngine;
 public class CrowdSpawnScript : MonoBehaviour {
 
 	public int NumberOfPeopleInCrowd;
+	public int InverseDensity;
 	public Transform[] transformArray;
 	public GameObject[] AuddienceToSpawn;
 	public Transform PlaceToLookAt;
 
+
 	// Use this for initialization
 	void Start () {
-		for (int i = 0; i < NumberOfPeopleInCrowd; i++) {
-			
-			GameObject CroudMember = Instantiate (AuddienceToSpawn [0], transformArray [i].position, transformArray [i].rotation);
-			CroudMember.GetComponent<AudienceAnimationScript> ().PlaceToLookAt = PlaceToLookAt;
+		if (InverseDensity <= 0) {
+			InverseDensity = 1;
+		}
+		else if(InverseDensity >= 24){
+			InverseDensity=24;
+		}
+	
+		for (int i = -5; i < transformArray.Length; i+=Random.Range(1,InverseDensity)) {
+			if (i > 0) {//-5 
+				GameObject CroudMember = Instantiate (AuddienceToSpawn [0], transformArray [i].position, transformArray [i].rotation);
+				CroudMember.GetComponent<AudienceAnimationScript> ().PlaceToLookAt = PlaceToLookAt;
+			}
 		}
 	}
 	
