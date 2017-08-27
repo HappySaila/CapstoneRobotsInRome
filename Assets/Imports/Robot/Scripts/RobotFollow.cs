@@ -47,4 +47,9 @@ public class RobotFollow : MonoBehaviour {
 			BackCamera.enabled = true;
 		}
 	}
+
+	public void DisableCameraColliders(){
+		FrontCamera.GetComponent <Collider>().enabled = false;
+		BackCamera.GetComponent <Collider>().enabled = false;
+	}
 }

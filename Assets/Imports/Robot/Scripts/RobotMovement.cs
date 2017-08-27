@@ -9,7 +9,8 @@ public class RobotMovement : MonoBehaviour {
 
 	Animator anim;
 	Rigidbody rigid;
-	RobotAttack attack;
+	RobotManagement robotManager;
+	RobotLaborerControl laborerControl;
 	float prevX;
 	bool canMove = true;
 	int numberOfAnimations = 4;
@@ -19,7 +20,8 @@ public class RobotMovement : MonoBehaviour {
 	void Start () {
 		anim = GetComponent <Animator> ();
 		rigid = GetComponentInChildren <Rigidbody> ();
-		attack = GetComponent <RobotAttack> ();
+		laborerControl = GetComponent <RobotLaborerControl> ();
+		robotManager = GetComponent <RobotManagement> ();
 	}
 	
 	// Update is called once per frame
@@ -69,7 +71,8 @@ public class RobotMovement : MonoBehaviour {
 		//player has just died an must turn into a laborer
 		canMove = false;
 		anim.SetTrigger ("Die");
-		attack.Die ();
 
+		//disable contraints on rigid body
+		rigid.constraints = RigidbodyConstraints.None;
 	}
 }

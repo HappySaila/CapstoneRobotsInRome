@@ -55,24 +55,17 @@ public class RobotAttack : MonoBehaviour {
 
 	public void OnCollisionEnter(Collision col){
 		if (isRamming){
-			Hit (col.gameObject);
+			Hit (col.gameObject, col.contacts[0].point);
 		}
 	}
 
-	void Hit(GameObject target){
+	void Hit(GameObject target, Vector3 point){
 		if (target.tag == "Hittable"){
-			Rigidbody targetRigid = target.GetComponent <Rigidbody> ();
-			targetRigid.AddForce (-transform.forward * ramForce, ForceMode.Impulse);
-
-			//disable rigidbody contraints
-			targetRigid.constraints = RigidbodyConstraints.None;
-
-			if (target.GetComponent <RobotMovement>() != null){
+			target.GetComponent <Rigidbody> ().AddForceAtPosition (-transform.forward * ramForce, point, ForceMode.VelocityChange);
+			print ("Running");
+			if (target.GetComponent <RobotManagement>() != null){
 				//the player has rammed a robot
-				RobotMovement targetMovement = target.GetComponent <RobotMovement> ();
-				RobotAttack targetAttack = target.GetComponent <RobotAttack> ();
-
-				targetMovement.Die ();
+				target.GetComponent <RobotManagement> ().Die ();
 			}
 		}
 	}
