@@ -8,11 +8,14 @@ public class CrowdSpawnScript : MonoBehaviour {
 	public int InverseDensity;
 	public Transform[] transformArray;
 	public GameObject[] AuddienceToSpawn;
+	private AudienceAnimationScript[] AuddienceScripts;
 	public Transform PlaceToLookAt;
 
 
 	// Use this for initialization
 	void Start () {
+		AuddienceScripts = new AudienceAnimationScript[transformArray.Length];
+
 		if (InverseDensity <= 0) {
 			InverseDensity = 1;
 		}
@@ -22,8 +25,17 @@ public class CrowdSpawnScript : MonoBehaviour {
 	
 		for (int i = -5; i < transformArray.Length; i+=Random.Range(1,InverseDensity)) {
 			if (i > 0) {//-5 
-				GameObject CroudMember = Instantiate (AuddienceToSpawn [0], transformArray [i].position, transformArray [i].rotation);
-				CroudMember.GetComponent<AudienceAnimationScript> ().PlaceToLookAt = PlaceToLookAt;
+				GameObject CrowdMember = Instantiate (AuddienceToSpawn [0], transformArray [i].position, transformArray [i].rotation);
+				AuddienceScripts [i] = CrowdMember.GetComponent<AudienceAnimationScript> ();
+				AuddienceScripts [i].PlaceToLookAt = PlaceToLookAt;
+			}
+		}
+	}
+
+	public void CallEachCrowdMember(bool isWild){
+		for (int i = 0; i < transformArray.Length; i ++) {
+			if(AuddienceScripts [i]!=null){
+				//AuddienceScripts [i].GetCalled (isWild);
 			}
 		}
 	}
