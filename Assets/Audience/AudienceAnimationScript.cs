@@ -78,6 +78,10 @@ public class AudienceAnimationScript : MonoBehaviour
 			StartCoroutine (DelayedAnimationCheer (cheerClamHashes [Random.Range (0, 2)]));
 		}
 	}
+	public void GetCalledRandum(){
+		StartCoroutine (DelayedAnimationCheer (cheerHashes [Random.Range (0, 5)]));
+	}
+
 
 	IEnumerator DelayedAnimationCheer (int hashCode)
 	{	
