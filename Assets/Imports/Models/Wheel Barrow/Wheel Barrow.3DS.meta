@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 87ebdf316e0f44dd6bb57bc84baac118
+timeCreated: 1503945780
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arms/Leg L
+    100002: Axle 01
+    100004: Axle 02
+    100006: Axle Hold0
+    100008: Axle Holde
+    100010: Brace 01
+    100012: Brace 02
+    100014: Brace 03
+    100016: Brace Line
+    100018: Bucket
+    100020: Cross Diam
+    100022: End 01
+    100024: End 02
+    100026: Fill Light
+    100028: Fill Light.target
+    100030: Frame/Arms
+    100032: Ground
+    100034: Handle 01
+    100036: Handle 02
+    100038: Hub 01
+    100040: Hub 02
+    100042: Key Light
+    100044: Key Light.target
+    100046: Left Hand0
+    100048: Left Handl
+    100050: Metal Circ
+    100052: Nut 01
+    100054: Nut 02
+    100056: Rim 01
+    100058: Rim 02
+    100060: Spokes 01
+    100062: Spokes 02
+    100064: Tire
+    100066: Wash Light
+    100068: Wheel Barr
+    100070: Wheel Barr.target
+    100072: //RootNode
+    400000: Arms/Leg L
+    400002: Axle 01
+    400004: Axle 02
+    400006: Axle Hold0
+    400008: Axle Holde
+    400010: Brace 01
+    400012: Brace 02
+    400014: Brace 03
+    400016: Brace Line
+    400018: Bucket
+    400020: Cross Diam
+    400022: End 01
+    400024: End 02
+    400026: Fill Light
+    400028: Fill Light.target
+    400030: Frame/Arms
+    400032: Ground
+    400034: Handle 01
+    400036: Handle 02
+    400038: Hub 01
+    400040: Hub 02
+    400042: Key Light
+    400044: Key Light.target
+    400046: Left Hand0
+    400048: Left Handl
+    400050: Metal Circ
+    400052: Nut 01
+    400054: Nut 02
+    400056: Rim 01
+    400058: Rim 02
+    400060: Spokes 01
+    400062: Spokes 02
+    400064: Tire
+    400066: Wash Light
+    400068: Wheel Barr
+    400070: Wheel Barr.target
+    400072: //RootNode
+    2300000: Arms/Leg L
+    2300002: Axle 01
+    2300004: Axle 02
+    2300006: Axle Hold0
+    2300008: Axle Holde
+    2300010: Brace 01
+    2300012: Brace 02
+    2300014: Brace 03
+    2300016: Brace Line
+    2300018: Bucket
+    2300020: Cross Diam
+    2300022: End 01
+    2300024: End 02
+    2300026: Frame/Arms
+    2300028: Ground
+    2300030: Hub 01
+    2300032: Hub 02
+    2300034: Left Hand0
+    2300036: Left Handl
+    2300038: Metal Circ
+    2300040: Nut 01
+    2300042: Nut 02
+    2300044: Spokes 01
+    2300046: Spokes 02
+    2300048: Tire
+    3300000: Arms/Leg L
+    3300002: Axle 01
+    3300004: Axle 02
+    3300006: Axle Hold0
+    3300008: Axle Holde
+    3300010: Brace 01
+    3300012: Brace 02
+    3300014: Brace 03
+    3300016: Brace Line
+    3300018: Bucket
+    3300020: Cross Diam
+    3300022: End 01
+    3300024: End 02
+    3300026: Frame/Arms
+    3300028: Ground
+    3300030: Hub 01
+    3300032: Hub 02
+    3300034: Left Hand0
+    3300036: Left Handl
+    3300038: Metal Circ
+    3300040: Nut 01
+    3300042: Nut 02
+    3300044: Spokes 01
+    3300046: Spokes 02
+    3300048: Tire
+    4300000: Arms/Leg L
+    4300002: Brace Line
+    4300004: Cross Diam
+    4300006: Metal Circ
+    4300008: Frame/Arms
+    4300010: Axle Holde
+    4300012: Hub 01
+    4300014: Axle 01
+    4300016: Nut 01
+    4300018: Spokes 01
+    4300020: Axle Hold0
+    4300022: Hub 02
+    4300024: Axle 02
+    4300026: Nut 02
+    4300028: Spokes 02
+    4300030: Brace 01
+    4300032: Bucket
+    4300034: Brace 02
+    4300036: Brace 03
+    4300038: Left Handl
+    4300040: End 01
+    4300042: Left Hand0
+    4300044: End 02
+    4300046: Tire
+    4300048: Ground
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

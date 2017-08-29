@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: aa9d669616dbe4b0eb3cba8a1de714f3
+timeCreated: 1503944739
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: center_sim
+    100002: shield0
+    100004: //RootNode
+    100006: shield_rin
+    100008: simvol
+    100010: volf
+    100012: volf001
+    100014: zaklepka
+    100016: zaklepka00
+    100018: zaklepka01
+    100020: zaklepka02
+    100022: zaklepka03
+    100024: zaklepka04
+    100026: zaklepka05
+    100028: zaklepka06
+    400000: center_sim
+    400002: shield0
+    400004: //RootNode
+    400006: shield_rin
+    400008: simvol
+    400010: volf
+    400012: volf001
+    400014: zaklepka
+    400016: zaklepka00
+    400018: zaklepka01
+    400020: zaklepka02
+    400022: zaklepka03
+    400024: zaklepka04
+    400026: zaklepka05
+    400028: zaklepka06
+    2300000: center_sim
+    2300002: shield0
+    2300004: shield_rin
+    2300006: simvol
+    2300008: volf
+    2300010: volf001
+    2300012: zaklepka
+    2300014: zaklepka00
+    2300016: zaklepka01
+    2300018: zaklepka02
+    2300020: zaklepka03
+    2300022: zaklepka04
+    2300024: zaklepka05
+    2300026: zaklepka06
+    3300000: center_sim
+    3300002: shield0
+    3300004: shield_rin
+    3300006: simvol
+    3300008: volf
+    3300010: volf001
+    3300012: zaklepka
+    3300014: zaklepka00
+    3300016: zaklepka01
+    3300018: zaklepka02
+    3300020: zaklepka03
+    3300022: zaklepka04
+    3300024: zaklepka05
+    3300026: zaklepka06
+    4300000: shield0
+    4300002: shield_rin
+    4300004: simvol
+    4300006: center_sim
+    4300008: volf
+    4300010: volf001
+    4300012: zaklepka00
+    4300014: zaklepka01
+    4300016: zaklepka02
+    4300018: zaklepka03
+    4300020: zaklepka04
+    4300022: zaklepka
+    4300024: zaklepka05
+    4300026: zaklepka06
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
