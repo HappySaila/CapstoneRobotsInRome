@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking;
+using System;
 
-public class RobotMovement : MonoBehaviour {
-	public float turnSpeed;
+public class RobotMovement : MovementRobotBehavior {
+	
+    public float turnSpeed;
 	public float moveSpeed;
 	public float maxVelocityChange;
 
@@ -15,7 +19,6 @@ public class RobotMovement : MonoBehaviour {
 	bool canMove = true;
 	int numberOfAnimations = 4;
 	int count = 0;
-
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent <Animator> ();
@@ -75,4 +78,9 @@ public class RobotMovement : MonoBehaviour {
 		//disable contraints on rigid body
 		rigid.constraints = RigidbodyConstraints.None;
 	}
+
+    public override void move(RpcArgs args)
+    {
+        
+    }
 }
