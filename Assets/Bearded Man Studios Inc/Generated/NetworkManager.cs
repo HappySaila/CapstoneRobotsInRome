@@ -425,7 +425,7 @@ namespace BeardedManStudios.Forge.Networking.Unity
 		public RobotBehavior InstantiateRobot(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
 		{
 			var go = Instantiate(RobotNetworkObject[index]);
-			var netBehavior = go.GetComponentInChildren<RobotBehavior>();
+			var netBehavior = go.GetComponent<RobotBehavior>();
 
 			NetworkObject obj = null;
 			if (!sendTransform && position == null && rotation == null)
@@ -454,8 +454,7 @@ namespace BeardedManStudios.Forge.Networking.Unity
 					if (rotation != null)
 						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
 				}
-				Debug.LogFormat("netBehavior {0}", netBehavior);
-                Debug.LogFormat("metaData {0}", metadata);
+
 				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
 			}
 

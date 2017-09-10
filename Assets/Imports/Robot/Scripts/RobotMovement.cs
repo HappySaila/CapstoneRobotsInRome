@@ -28,25 +28,32 @@ public class RobotMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		NetworkUpdate();
-		if (canMove){
-			UpdateMovement ();
-		}
+        if (canMove && robotManager.isOwner){
+			UpdateMovement();
+        }else{
+            Animate(robotManager.networkObject.x, robotManager.networkObject.y);
+        }
 	}
 
 	void Update(){
 		UpdateTaunt ();
 	}
 
+    void Animate(float x, float y){
+		anim.SetBool("Forward", y > 0);
+		anim.SetBool("Backward", y < 0);
+		prevX = Mathf.Lerp(prevX, x, 5 * Time.deltaTime);
+		anim.SetFloat("x", (prevX + 1) / 2);
+    }
+
 	void UpdateMovement(){
 		float y = Input.GetAxis ("Vertical");
 		float x = Input.GetAxis ("Horizontal");
 
-		//update animator
-		anim.SetBool ("Forward", y > 0);
-		anim.SetBool ("Backward", y < 0);
-		prevX = Mathf.Lerp (prevX, x, 5 * Time.deltaTime);
-		anim.SetFloat ("x", (prevX+1)/2);
-
+        //update animator
+        Animate(x, y);
+        robotManager.SendInputData(x, y);
+       
 		//Movement
 		Vector3 targetVelocity = y * -transform.forward;
 		targetVelocity *= moveSpeed;
@@ -82,4 +89,8 @@ public class RobotMovement : MonoBehaviour {
 		//disable contraints on rigid body
 		rigid.constraints = RigidbodyConstraints.None;
 	}
+
+    public void SetAnimator(float x, float y){
+        Animate(x,y);
+    }
 }

@@ -10,6 +10,7 @@ using BeardedManStudios.Forge.Networking.Generated;
 public class RobotManagement : RobotBehavior {
 	public bool isAI;
 	public bool isRed;
+    public bool isOwner;
 	[Tooltip("Collider that makes robot hover above ground.")]public SphereCollider hoverBase;
 
 	[HideInInspector]public RobotMovement robotMovement;
@@ -42,6 +43,7 @@ public class RobotManagement : RobotBehavior {
 	protected override void NetworkStart()
 	{
 		base.NetworkStart();
+        isOwner = networkObject.IsOwner;
 		if (!networkObject.IsOwner)
 		{
             robotFollow.DisableCameras();
@@ -74,6 +76,12 @@ public class RobotManagement : RobotBehavior {
 	void Update () {
 		
 	}
+
+    public void SendInputData(float x, float y)
+    {
+		networkObject.x = x;
+		networkObject.y = y;
+    }
 
     public void SendTranformData(Transform t){
         //send data to all other clients
