@@ -20,11 +20,11 @@ public class RobotManagement : RobotBehavior {
 
 	// Use this for initialization
 	void Start () {
-		robotMovement = GetComponent <RobotMovement> ();
-		robotAttack = GetComponent <RobotAttack> ();
-		robotFollow = GetComponent <RobotFollow> ();
-		robotLaborerControl = GetComponent <RobotLaborerControl> ();
-		rigid = GetComponent <Rigidbody> ();
+		robotMovement = GetComponentInChildren <RobotMovement> ();
+		robotAttack = GetComponentInChildren <RobotAttack> ();
+		robotFollow = GetComponentInChildren <RobotFollow> ();
+		robotLaborerControl = GetComponentInChildren <RobotLaborerControl> ();
+		rigid = GetComponentInChildren <Rigidbody> ();
 
 		if (isAI) {
 			//turn off cameras
@@ -39,13 +39,26 @@ public class RobotManagement : RobotBehavior {
 			
 	}
 
+	protected override void NetworkStart()
+	{
+		base.NetworkStart();
+		if (!networkObject.IsOwner)
+		{
+            robotFollow.DisableCameras();
+            robotFollow.enabled = false;
+            robotMovement.canMove = false;
+            robotAttack.enabled = false;
+			//Destroy(GetComponent<Rigidbody>());
+		}
+	}
+
 	public void Die(){
 		//player has been hit and will turn into a laborer
 		//stop movement
 		robotMovement.Die ();
 		robotMovement.enabled = false;
 		hoverBase.enabled = false;
-		GetComponent <NavMeshAgent> ().enabled = false;
+		GetComponentInChildren <NavMeshAgent> ().enabled = false;
 
 		//stop attacking
 		robotAttack.enabled = false;
@@ -65,13 +78,14 @@ public class RobotManagement : RobotBehavior {
     public void SendTranformData(Transform t){
         //send data to all other clients
         if (!networkObject.IsOwner){
-            transform.position = networkObject.position;
-            transform.rotation = networkObject.rotation;
+            //Debug.LogFormat(" position x {0} y {1}",networkObject.position.x,networkObject.position.y );
+            t.position = networkObject.position;
+            t.rotation = networkObject.rotation;
             return;
         }
 
-        networkObject.position = transform.position;
-        networkObject.rotation = transform.rotation;
+        networkObject.position = t.position;
+        networkObject.rotation = t.rotation;
     }
 
 }

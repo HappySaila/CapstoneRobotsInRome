@@ -14,19 +14,20 @@ public class RobotMovement : MonoBehaviour {
 	RobotManagement robotManager;
 	RobotLaborerControl laborerControl;
 	float prevX;
-	bool canMove = true;
+	[HideInInspector] public bool canMove = true;
 	int numberOfAnimations = 4;
 	int count = 0;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent <Animator> ();
-		rigid = GetComponentInChildren <Rigidbody> ();
+		rigid = GetComponent <Rigidbody> ();
 		laborerControl = GetComponent <RobotLaborerControl> ();
-		robotManager = GetComponent <RobotManagement> ();
+		robotManager = GetComponentInParent <RobotManagement> ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		NetworkUpdate();
 		if (canMove){
 			UpdateMovement ();
 		}
@@ -37,7 +38,6 @@ public class RobotMovement : MonoBehaviour {
 	}
 
 	void UpdateMovement(){
-        NetworkUpdate();
 		float y = Input.GetAxis ("Vertical");
 		float x = Input.GetAxis ("Horizontal");
 
