@@ -4,9 +4,10 @@ using UnityEngine;
 
 //sets the initial state of a robot
 using UnityEngine.AI;
+using BeardedManStudios.Forge.Networking.Generated;
 
 
-public class RobotManagement : MonoBehaviour {
+public class RobotManagement : RobotBehavior {
 	public bool isAI;
 	public bool isRed;
 	[Tooltip("Collider that makes robot hover above ground.")]public SphereCollider hoverBase;
@@ -28,8 +29,8 @@ public class RobotManagement : MonoBehaviour {
 		if (isAI) {
 			//turn off cameras
 			Camera[] cameras = GetComponentsInChildren <Camera> ();
-			foreach (Camera camera in cameras) {
-				Destroy (camera.gameObject);
+			foreach (Camera c in cameras) {
+				Destroy (c.gameObject);
 			}
 			robotFollow.enabled = false;
 			robotMovement.moveSpeed = 0;
@@ -60,5 +61,17 @@ public class RobotManagement : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void SendTranformData(Transform t){
+        //send data to all other clients
+        if (!networkObject.IsOwner){
+            transform.position = networkObject.position;
+            transform.rotation = networkObject.rotation;
+            return;
+        }
+
+        networkObject.position = transform.position;
+        networkObject.rotation = transform.rotation;
+    }
 
 }

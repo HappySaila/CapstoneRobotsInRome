@@ -25,6 +25,7 @@ public class CrowdSpawnScript : MonoBehaviour {
 			GameObject CrowdMember = Instantiate (AuddiencePrefabsToSpawn [Random.Range(0,AuddiencePrefabsToSpawn.Length)], AllSpawnPointsForCrowd[i].transform.position, AllSpawnPointsForCrowd [i].transform.rotation);
 				AuddienceScripts [i] = CrowdMember.GetComponent<AudienceAnimationScript> ();
 				AuddienceScripts [i].PlaceToLookAt = PlaceToLookAt;
+            CrowdMember.transform.parent = transform;
 
 		}
 	}
@@ -33,7 +34,6 @@ public class CrowdSpawnScript : MonoBehaviour {
 	void Update () {
 		TimeCount += Time.deltaTime;
 		if(TimeCount>2f){
-			Debug.Log ("TimeCount"+TimeCount);
 			TimeCount = 0f;
 			CallEachCrowdMember ();
 		}

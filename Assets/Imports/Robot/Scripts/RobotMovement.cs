@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using BeardedManStudios.Forge.Networking.Generated;
-using BeardedManStudios.Forge.Networking;
 using System;
 
-public class RobotMovement : MovementRobotBehavior {
+public class RobotMovement : MonoBehaviour {
 	
     public float turnSpeed;
 	public float moveSpeed;
@@ -39,6 +37,7 @@ public class RobotMovement : MovementRobotBehavior {
 	}
 
 	void UpdateMovement(){
+        NetworkUpdate();
 		float y = Input.GetAxis ("Vertical");
 		float x = Input.GetAxis ("Horizontal");
 
@@ -63,6 +62,11 @@ public class RobotMovement : MovementRobotBehavior {
 		transform.Rotate (0, Input.GetAxis ("Horizontal") * turnSpeed * Time.deltaTime, 0);
 	}
 
+    void NetworkUpdate(){
+        //sends data that needs to synced to the robotManager
+        robotManager.SendTranformData(transform);
+    }
+
 	public void UpdateTaunt(){
 		if (Input.GetMouseButtonDown (1)){
 			anim.SetInteger ("IdleNumber", count++ % numberOfAnimations);
@@ -78,9 +82,4 @@ public class RobotMovement : MovementRobotBehavior {
 		//disable contraints on rigid body
 		rigid.constraints = RigidbodyConstraints.None;
 	}
-
-    public override void move(RpcArgs args)
-    {
-        
-    }
 }
