@@ -4,13 +4,17 @@ using UnityEngine;
 
 //sets the initial state of a robot
 using UnityEngine.AI;
+using UnityEngine.UI;
 using BeardedManStudios.Forge.Networking.Generated;
-
+using BeardedManStudios.Forge.Networking;
+using System;
 
 public class RobotManagement : RobotBehavior {
 	public bool isAI;
 	public bool isRed;
     public bool isOwner;
+    public string ipAddress;
+    Text log;
 	[Tooltip("Collider that makes robot hover above ground.")]public SphereCollider hoverBase;
 
 	[HideInInspector]public RobotMovement robotMovement;
@@ -21,11 +25,15 @@ public class RobotManagement : RobotBehavior {
 
 	// Use this for initialization
 	void Start () {
+        ipAddress = Network.player.ipAddress;
+        log = GameObject.Find("Log").GetComponent<Text>();
+        log.text = "Found log";
 		robotMovement = GetComponentInChildren <RobotMovement> ();
 		robotAttack = GetComponentInChildren <RobotAttack> ();
 		robotFollow = GetComponentInChildren <RobotFollow> ();
 		robotLaborerControl = GetComponentInChildren <RobotLaborerControl> ();
 		rigid = GetComponentInChildren <Rigidbody> ();
+
 
 		if (isAI) {
 			//turn off cameras
@@ -44,12 +52,14 @@ public class RobotManagement : RobotBehavior {
 	{
 		base.NetworkStart();
         isOwner = networkObject.IsOwner;
-		if (!networkObject.IsOwner)
+
+		if (!isOwner)
 		{
             robotFollow.DisableCameras();
+            robotFollow.DisableAudioListener();
             robotFollow.enabled = false;
             robotMovement.canMove = false;
-            robotAttack.enabled = false;
+            //robotAttack.enabled = false;
 			//Destroy(GetComponent<Rigidbody>());
 		}
 	}
@@ -58,7 +68,7 @@ public class RobotManagement : RobotBehavior {
 		//player has been hit and will turn into a laborer
 		//stop movement
 		robotMovement.Die ();
-		robotMovement.enabled = false;
+        robotMovement.canMove = false;
 		hoverBase.enabled = false;
 		GetComponentInChildren <NavMeshAgent> ().enabled = false;
 
@@ -74,7 +84,7 @@ public class RobotManagement : RobotBehavior {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        
 	}
 
     public void SendInputData(float x, float y)
@@ -96,4 +106,31 @@ public class RobotManagement : RobotBehavior {
         networkObject.rotation = t.rotation;
     }
 
+    public float SendRamData(){
+        float ramVal = 0;
+		if (!networkObject.IsOwner)
+		{
+            ramVal = networkObject.ram;
+			return ramVal;
+		}
+
+        networkObject.ram = Input.GetAxis("Jump");
+        return Input.GetAxis("Jump");
+    }
+
+    public void AddForce(Vector3 force, Vector3 point, string hitIPAddress){
+        networkObject.SendRpc("RamForce", Receivers.All, force, point, hitIPAddress);
+    }
+
+    public override void RamForce(RpcArgs args)
+    {
+        //will add force the object
+        Vector3 force = args.GetNext<Vector3>();
+        Vector3 contactPoint = args.GetNext<Vector3>();
+        string hitIpAddress = args.GetNext<String>();
+		Debug.LogFormat("My IP :{0}", Network.player.ipAddress);
+		Debug.LogFormat("Hit IP :{0}", hitIpAddress);
+
+        log.text = "HIT";
+    }
 }

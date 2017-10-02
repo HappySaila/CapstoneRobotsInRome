@@ -8,10 +8,12 @@ public class RobotAttack : MonoBehaviour {
 	public float ramForce;
 	Animator anim;
 	Rigidbody rigid;
+    RobotManagement robotManager;
 	bool isRamming = false;
 	public bool canRam = true;
 	// Use this for initialization
 	void Start () {
+        robotManager = GetComponentInParent<RobotManagement>();
 		anim = GetComponent <Animator> ();
 		rigid = GetComponentInChildren <Rigidbody> ();
 	}
@@ -32,7 +34,9 @@ public class RobotAttack : MonoBehaviour {
 	}
 
 	void UpdateFire(){
-		if (Input.GetAxis("Jump")>0 && canRam){
+        float ramVal = robotManager.SendRamData();
+        //set network objects jumpval
+		if (ramVal > 0 && canRam){
 			canRam = false;
 			anim.SetTrigger ("Ram");
 		}
@@ -61,7 +65,8 @@ public class RobotAttack : MonoBehaviour {
 
 	void Hit(GameObject target, Vector3 point){
 		if (target.tag == "Hittable"){
-			target.GetComponent <Rigidbody> ().AddForceAtPosition (-transform.forward * ramForce, point, ForceMode.VelocityChange);
+			//target.GetComponent <Rigidbody> ().AddForceAtPosition (-transform.forward * ramForce, point, ForceMode.VelocityChange);
+            robotManager.AddForce(-transform.forward * ramForce, point, target.GetComponentInParent<RobotManagement>().ipAddress);
 			if (target.GetComponentInParent <RobotManagement>() != null){
 				//the player has rammed a robot
 				target.GetComponentInParent <RobotManagement> ().Die ();

@@ -28,8 +28,12 @@ public class RobotFollow : MonoBehaviour {
 
     public void DisableCameras(){
 		FrontCamera.enabled = false;
-        BackCamera.enabled = false;    
+        BackCamera.enabled = false;
     }
+
+    public void DisableAudioListener(){
+		GetComponentInChildren<AudioListener>().enabled = false;
+	}
 
 	void Follow(){
 		//camera will lerp tranform to back/front position

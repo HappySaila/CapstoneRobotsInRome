@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[]")]
-	[GeneratedRPCVariableNames("{\"types\":[]")]
+	[GeneratedRPC("{\"types\":[[\"Vector3\", \"Vector3\", \"string\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"Direction\", \"ContactPoint\", \"IPAddress\"]]")]
 	public abstract partial class RobotBehavior : NetworkBehavior
 	{
+		public const byte RPC_RAM_FORCE = 0 + 5;
 		
 		public RobotNetworkObject networkObject = null;
 
@@ -21,6 +22,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
+			networkObject.RegisterRpc("RamForce", RamForce, typeof(Vector3), typeof(Vector3), typeof(string));
 
 			MainThreadManager.Run(() =>
 			{
@@ -95,6 +97,13 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.SnapInterpolations();
 		}
 
+		/// <summary>
+		/// Arguments:
+		/// Vector3 Direction
+		/// Vector3 ContactPoint
+		/// string IPAddress
+		/// </summary>
+		public abstract void RamForce(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0.15,0.15,0,0]")]
+	[GeneratedInterpol("{\"inter\":[0.15,0.15,0,0,0]")]
 	public partial class RobotNetworkObject : NetworkObject
 	{
 		public const int IDENTITY = 5;
@@ -135,6 +135,36 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (yChanged != null) yChanged(_y, timestep);
 			if (fieldAltered != null) fieldAltered("y", _y, timestep);
 		}
+		private float _ram;
+		public event FieldEvent<float> ramChanged;
+		public InterpolateFloat ramInterpolation = new InterpolateFloat() { LerpT = 0f, Enabled = false };
+		public float ram
+		{
+			get { return _ram; }
+			set
+			{
+				// Don't do anything if the value is the same
+				if (_ram == value)
+					return;
+
+				// Mark the field as dirty for the network to transmit
+				_dirtyFields[0] |= 0x10;
+				_ram = value;
+				hasDirtyFields = true;
+			}
+		}
+
+		public void SetramDirty()
+		{
+			_dirtyFields[0] |= 0x10;
+			hasDirtyFields = true;
+		}
+
+		private void RunChange_ram(ulong timestep)
+		{
+			if (ramChanged != null) ramChanged(_ram, timestep);
+			if (fieldAltered != null) fieldAltered("ram", _ram, timestep);
+		}
 
 		protected override void OwnershipChanged()
 		{
@@ -148,6 +178,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			rotationInterpolation.current = rotationInterpolation.target;
 			xInterpolation.current = xInterpolation.target;
 			yInterpolation.current = yInterpolation.target;
+			ramInterpolation.current = ramInterpolation.target;
 		}
 
 		public override int UniqueIdentity { get { return IDENTITY; } }
@@ -158,6 +189,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			UnityObjectMapper.Instance.MapBytes(data, _rotation);
 			UnityObjectMapper.Instance.MapBytes(data, _x);
 			UnityObjectMapper.Instance.MapBytes(data, _y);
+			UnityObjectMapper.Instance.MapBytes(data, _ram);
 
 			return data;
 		}
@@ -180,6 +212,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			yInterpolation.current = _y;
 			yInterpolation.target = _y;
 			RunChange_y(timestep);
+			_ram = UnityObjectMapper.Instance.Map<float>(payload);
+			ramInterpolation.current = _ram;
+			ramInterpolation.target = _ram;
+			RunChange_ram(timestep);
 		}
 
 		protected override BMSByte SerializeDirtyFields()
@@ -195,6 +231,8 @@ namespace BeardedManStudios.Forge.Networking.Generated
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _x);
 			if ((0x8 & _dirtyFields[0]) != 0)
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _y);
+			if ((0x10 & _dirtyFields[0]) != 0)
+				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _ram);
 
 			return dirtyFieldsData;
 		}
@@ -259,6 +297,19 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					RunChange_y(timestep);
 				}
 			}
+			if ((0x10 & readDirtyFlags[0]) != 0)
+			{
+				if (ramInterpolation.Enabled)
+				{
+					ramInterpolation.target = UnityObjectMapper.Instance.Map<float>(data);
+					ramInterpolation.Timestep = timestep;
+				}
+				else
+				{
+					_ram = UnityObjectMapper.Instance.Map<float>(data);
+					RunChange_ram(timestep);
+				}
+			}
 		}
 
 		public override void InterpolateUpdate()
@@ -285,6 +336,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			{
 				_y = (float)yInterpolation.Interpolate();
 				RunChange_y(yInterpolation.Timestep);
+			}
+			if (ramInterpolation.Enabled && !ramInterpolation.current.Near(ramInterpolation.target, 0.0015f))
+			{
+				_ram = (float)ramInterpolation.Interpolate();
+				RunChange_ram(ramInterpolation.Timestep);
 			}
 		}
 
