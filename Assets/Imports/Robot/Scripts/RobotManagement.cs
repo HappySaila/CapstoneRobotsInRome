@@ -7,6 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
+using BeardedManStudios.Forge.Networking.Unity;
 using System;
 
 public class RobotManagement : RobotBehavior {
@@ -22,32 +23,37 @@ public class RobotManagement : RobotBehavior {
 	[HideInInspector]public RobotLaborerControl robotLaborerControl;
 	[HideInInspector]public RobotFollow robotFollow;
 	[HideInInspector]public Rigidbody rigid;
+    // Use this for initialization
 
-	// Use this for initialization
-	void Start () {
+    void Start () {
+        
+	}
+
+    public void givenToPlayer()
+    {
         ipAddress = Network.player.ipAddress;
         log = GameObject.Find("Log").GetComponent<Text>();
         log.text = "Found log";
-		robotMovement = GetComponentInChildren <RobotMovement> ();
-		robotAttack = GetComponentInChildren <RobotAttack> ();
-		robotFollow = GetComponentInChildren <RobotFollow> ();
-		robotLaborerControl = GetComponentInChildren <RobotLaborerControl> ();
-		rigid = GetComponentInChildren <Rigidbody> ();
+        robotMovement = GetComponentInChildren<RobotMovement>();
+        robotAttack = GetComponentInChildren<RobotAttack>();
+        robotFollow = GetComponentInChildren<RobotFollow>();
+        robotLaborerControl = GetComponentInChildren<RobotLaborerControl>();
+        rigid = GetComponentInChildren<Rigidbody>();
 
 
-		if (isAI) {
-			//turn off cameras
-			Camera[] cameras = GetComponentsInChildren <Camera> ();
-			foreach (Camera c in cameras) {
-				Destroy (c.gameObject);
-			}
-			robotFollow.enabled = false;
-			robotMovement.moveSpeed = 0;
-			robotAttack.canRam = false;
-		}
-			
-	}
-
+        if (isAI)
+        {
+            //turn off cameras
+            Camera[] cameras = GetComponentsInChildren<Camera>();
+            foreach (Camera c in cameras)
+            {
+                Destroy(c.gameObject);
+            }
+            robotFollow.enabled = false;
+            robotMovement.moveSpeed = 0;
+            robotAttack.canRam = false;
+        }
+    }
 	protected override void NetworkStart()
 	{
 		base.NetworkStart();
@@ -80,7 +86,7 @@ public class RobotManagement : RobotBehavior {
 		//set player to laborer
 		robotLaborerControl.CallSetLaborer ();
 		robotLaborerControl.isIdleLaborer = true;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -130,7 +136,12 @@ public class RobotManagement : RobotBehavior {
         string hitIpAddress = args.GetNext<String>();
 		Debug.LogFormat("My IP :{0}", Network.player.ipAddress);
 		Debug.LogFormat("Hit IP :{0}", hitIpAddress);
+        if (Network.player.ipAddress.Equals(hitIpAddress) && !isOwner)
+        {
+            log.text = "HIT";
+            Die();
+        }
 
-        log.text = "HIT";
+        
     }
 }

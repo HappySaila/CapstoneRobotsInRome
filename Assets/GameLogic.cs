@@ -1,17 +1,46 @@
 ﻿using UnityEngine;
 using BeardedManStudios.Forge.Networking.Unity;
-
-
+using System.Collections;
+using BeardedManStudios.Forge.Networking;
 public class GameLogic : MonoBehaviour {
-    public Vector3 InitialSpawn;
 
+    ArrayList connectedPlayers = new ArrayList();
 	// Use this for initialization
 	void Start () {
-        NetworkManager.Instance.InstantiateRobot(position: InitialSpawn);
+        if (!NetworkManager.Instance.IsServer)
+        {
+            Debug.Log("ye boi");
+            
+        }
+        else
+        {
+            Debug.Log("Server is running");
+            Debug.Log("please rerun a instance and connect to this IP");
+            Debug.Log(Network.player.ipAddress);
+            NetworkManager.Instance.Networker.playerConnected += (player, sender) =>
+            {
+                onPlyerConnect(player, sender);
+            };
+
+        }
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    public void onPlyerConnect(NetworkingPlayer player, NetWorker sender)
+    {
+        Debug.Log("player with ip " + player.Ip + "connected");
+        connectedPlayers.Add(player);
+    }
+    
+    public void StartGame()
+    {
+        int count = 0;
+        foreach(NetworkingPlayer player in connectedPlayers)
+        {
+            NetworkManager.Instance.InstantiateRobot(position :new Vector3(count,count,count));
+            count++;
+        }
+    }
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKey(KeyCode.Escape)){
             Application.Quit();
         }
