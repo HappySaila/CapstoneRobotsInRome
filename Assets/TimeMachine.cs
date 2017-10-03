@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeMachine : MonoBehaviour {
+    public bool isBlue;
     public Transform timeMachine;
     public Transform initialPosition;
     public Transform targetPosition;
@@ -25,11 +27,34 @@ public class TimeMachine : MonoBehaviour {
         }
 	}
 
-    void Build(){
+    public void Build(){
         currentProgress += buildSpeedMultiplier * buildSpeed;
+        currentProgress = Mathf.Clamp(currentProgress, 0, 100);
+        if (currentProgress > 99){
+            EndGame();
+        }
 
         timeMachine.position = new Vector3(timeMachine.position.x, 
             (currentProgress/100)*(targetPosition.position.y-initialPosition.position.y)+initialPosition.position.y, 
             timeMachine.position.z);
     }
+
+    public void EndGame(){
+        //team has won. Show end Game Screen
+        SceneManager.LoadScene("MultiplayerMenu");
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.GetComponentInParent<RSManager>()!=null){
+            if (!col.GetComponentInParent<RSManager>().robotLaborerControl.isFighter)
+            {
+				col.GetComponentInParent<RSManager>().robotLaborerControl.StartBuilding(this);
+                //laborer must start building
+			}
+        }
+
+    }
+
+
 }

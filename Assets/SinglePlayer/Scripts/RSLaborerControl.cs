@@ -11,10 +11,11 @@ public class RSLaborerControl : MonoBehaviour
 	SphereCollider trigger;
 	Rigidbody rigid;
 	Animator anim;
+    TimeMachine timeMachine;
 
 	[HideInInspector] public bool isIdleLaborer;
 	[HideInInspector] public bool isBuilding;
-	[HideInInspector] public bool isFighter;
+	public bool isFighter;
 
 	void Start()
 	{
@@ -28,23 +29,16 @@ public class RSLaborerControl : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (agent.enabled == true)
-		{
-			transform.forward = -(target.position - transform.position);
-			agent.SetDestination(target.position);
-			
-		}
+        if (isBuilding){
+            timeMachine.Build();
+        }
 	}
 
-    public void StartBuilding(){
+    public void StartBuilding(TimeMachine t){
 		anim.SetBool("isBuilding", true);
+        timeMachine = t;
+        isBuilding = true;
 		agent.enabled = false;
-
-		if (Vector3.Distance(target.position, transform.position) < 1.5f)
-		{
-			//target has reached its destination and must start building
-			
-		}
     }
 
 	public void CallSetLaborer()
@@ -89,6 +83,7 @@ public class RSLaborerControl : MonoBehaviour
 		{
 			//player has completed standing up
 			isIdleLaborer = false;
+            isFighter = false;
 			transform.up = Vector2.up;
 			anim.SetTrigger("Spin");
 			agent.enabled = true;
