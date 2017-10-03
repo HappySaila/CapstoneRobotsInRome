@@ -39,9 +39,8 @@ public class GameLogic : MonoBehaviour {
         RobotBehavior behavior;
         foreach (NetworkingPlayer player in connectedPlayers)
         {
-            count++;
             Debug.Log("players");
-            behavior = NetworkManager.Instance.InstantiateRobot(position: new Vector3(count, count, count));
+            behavior = NetworkManager.Instance.InstantiateRobot(position: new Vector3(-1000, count, count));
             Debug.Log(behavior.networkObject.Owner.Name);
             behavior.networkObject.AssignOwnership(player);
             Debug.Log(behavior.networkObject.Owner.Name);
@@ -49,10 +48,12 @@ public class GameLogic : MonoBehaviour {
             
         }
 
-        behavior = NetworkManager.Instance.InstantiateRobot(position: new Vector3(50, 0, 0));
+        /*behavior = NetworkManager.Instance.InstantiateRobot(position: new Vector3(50, 0, 0));
         behavior.networkObject.SendRpc("RamForce", Receivers.All, new Vector3(0,0,0), new Vector3(0,0,0), "0.0.0.0"); ;
         behavior = NetworkManager.Instance.InstantiateRobot(position: new Vector3(25, 0, 0));
+        behavior.networkObject.SendRpc("RamForce", Receivers.All, new Vector3(0, 0, 0), new Vector3(0, 0, 0), "0.0.0.0"); ;
         behavior = NetworkManager.Instance.InstantiateRobot(position: new Vector3(0, 26, 0));
+        behavior.networkObject.SendRpc("RamForce", Receivers.All, new Vector3(0, 0, 0), new Vector3(0, 0, 0), "0.0.0.0"); ;*/
     }
     // Update is called once per frame
     void Update () {

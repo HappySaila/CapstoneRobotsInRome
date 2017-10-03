@@ -18,6 +18,20 @@ public class APIScript : MonoBehaviour {
         return "{ \"msg\":\"API is running again\"}".Equals(result);
     }
 
+    protected bool Login(string username, string password, string IP = defaultIP, string PORT = defaultPort)
+    {
+        string pass = CalculateMD5Hash(password);
+        string query = defaultIP + ":" + defaultPort + "/api/users/login/?username=" + username + "&password=" + pass;
+        Debug.Log(query);
+        string response = Http.Get(query);
+        Debug.Log(response);
+        if (response.Equals("{ \"error\":\"Server error\"}"))
+        {
+            return false;
+        }
+        return true;
+    }
+
     protected bool RegisterUser(string username, string password, string IP = defaultIP, string PORT = defaultPort)
     {
         string pass = CalculateMD5Hash(password);
@@ -29,7 +43,11 @@ public class APIScript : MonoBehaviour {
         form.AddField("salt", "none");
         string response = Http.Post(query,form);
         Debug.Log(response);
-        return false;
+        if(response.Equals("{ \"error\":\"Server error\"}"))
+        {
+            return false;
+        }
+        return true;
     }
 
     void Start () {
