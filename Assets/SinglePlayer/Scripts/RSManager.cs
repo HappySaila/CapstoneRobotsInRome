@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class RSManager : MonoBehaviour {
 	public bool isAI;
 	public bool isRed;
+	NavMeshAgent agent;
+
 	[Tooltip("Collider that makes robot hover above ground.")] public SphereCollider hoverBase;
 
 	[HideInInspector] public RSMovement robotMovement;
@@ -21,6 +23,7 @@ public class RSManager : MonoBehaviour {
 		robotFollow = GetComponentInChildren<RobotFollow>();
 		rigid = GetComponentInChildren<Rigidbody>();
 		robotLaborerControl = GetComponentInChildren<RSLaborerControl>();
+		agent = GetComponentInChildren<NavMeshAgent>();
 
 		if (isAI)
 		{
@@ -33,6 +36,10 @@ public class RSManager : MonoBehaviour {
 			robotFollow.enabled = false;
 			robotMovement.moveSpeed = 0;
 			robotAttack.canRam = false;
+
+			//things james added to get ai to work
+			agent.enabled = true;
+			robotLaborerControl.enabled = false;
 		}
 	}
 

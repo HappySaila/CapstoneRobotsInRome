@@ -22,6 +22,7 @@ public class RSLaborerControl : MonoBehaviour
 		anim = GetComponent<Animator>();
 		agent = GetComponent<NavMeshAgent>();
 		agent.updateRotation = false;
+
 		agent.enabled = false;
 	}
 
