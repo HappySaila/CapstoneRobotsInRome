@@ -1,0 +1,42 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 710M (ID=0x1140)
+    Vendor:   NVIDIA
+    VRAM:     978 MB
+    Driver:   21.21.13.6909
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\BeardedManStudios.dll (this message is harmless)
+Loading C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\BeardedManStudios.dll into Unity Child Domain
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\ForgeNetworkingCommon.dll (this message is harmless)
+Loading C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\ForgeNetworkingCommon.dll into Unity Child Domain
+- Completed reload, in  0.672 seconds
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\James Murray\Documents\GitHub\CapstoneRobotsInRome\WinBuildJAMES_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 4.210784 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1c6c -> priority: 1 
+  Thread -> id: 82c -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 45.024315 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1295.
+Total: 63.973701 ms (FindLiveObjects: 0.222940 ms CreateObjectMapping: 16.316290 ms MarkObjects: 47.241180 ms  DeleteObjects: 0.191010 ms)
+
+ye boi
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
