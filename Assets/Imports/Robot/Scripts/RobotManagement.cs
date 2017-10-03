@@ -13,7 +13,6 @@ using System;
 public class RobotManagement : RobotBehavior {
 	public bool isAI;
 	public bool isRed;
-    public bool isOwner;
     public string ipAddress;
     Text log;
 	[Tooltip("Collider that makes robot hover above ground.")]public SphereCollider hoverBase;
@@ -26,22 +25,13 @@ public class RobotManagement : RobotBehavior {
     // Use this for initialization
 
     void Start () {
-        
-	}
-
-    public void givenToPlayer()
-    {
-        ipAddress = Network.player.ipAddress;
-        log = GameObject.Find("Log").GetComponent<Text>();
-        log.text = "Found log";
         robotMovement = GetComponentInChildren<RobotMovement>();
         robotAttack = GetComponentInChildren<RobotAttack>();
         robotFollow = GetComponentInChildren<RobotFollow>();
         robotLaborerControl = GetComponentInChildren<RobotLaborerControl>();
         rigid = GetComponentInChildren<Rigidbody>();
-
-
-        if (isAI)
+        robotFollow.DisableCameras();
+        /*if (isAI)
         {
             //turn off cameras
             Camera[] cameras = GetComponentsInChildren<Camera>();
@@ -52,22 +42,21 @@ public class RobotManagement : RobotBehavior {
             robotFollow.enabled = false;
             robotMovement.moveSpeed = 0;
             robotAttack.canRam = false;
-        }
+        }*/
+        /* NetworkManager.Instance.OwnerSh+= (newPlayer) =>
+         {
+             Debug.Log("hi");
+             ipAddress = Network.player.ipAddress;
+             log = GameObject.Find("Log").GetComponent<Text>();
+             log.text = "owner changed to me";
+             
+        };*/
+        Debug.Log("event listener created");
     }
+
 	protected override void NetworkStart()
 	{
-		base.NetworkStart();
-        isOwner = networkObject.IsOwner;
-
-		if (!isOwner)
-		{
-            robotFollow.DisableCameras();
-            robotFollow.DisableAudioListener();
-            robotFollow.enabled = false;
-            robotMovement.canMove = false;
-            //robotAttack.enabled = false;
-			//Destroy(GetComponent<Rigidbody>());
-		}
+        base.NetworkStart();
 	}
 
 	public void Die(){
@@ -90,7 +79,10 @@ public class RobotManagement : RobotBehavior {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if (networkObject.IsOwner)
+        {
+            robotFollow.EnableCameras();
+        }
 	}
 
     public void SendInputData(float x, float y)
@@ -102,6 +94,7 @@ public class RobotManagement : RobotBehavior {
     public void SendTranformData(Transform t){
         //send data to all other clients
         if (!networkObject.IsOwner){
+            
             //Debug.LogFormat(" position x {0} y {1}",networkObject.position.x,networkObject.position.y );
             t.position = networkObject.position;
             t.rotation = networkObject.rotation;
@@ -136,9 +129,13 @@ public class RobotManagement : RobotBehavior {
         string hitIpAddress = args.GetNext<String>();
 		Debug.LogFormat("My IP :{0}", Network.player.ipAddress);
 		Debug.LogFormat("Hit IP :{0}", hitIpAddress);
-        if (Network.player.ipAddress.Equals(hitIpAddress) && !isOwner)
+        if (Network.player.ipAddress.Equals(hitIpAddress) && !networkObject.IsOwner)
         {
             log.text = "HIT";
+            Die();
+        }
+        if (hitIpAddress.Equals("0.0.0.0"))
+        {
             Die();
         }
 

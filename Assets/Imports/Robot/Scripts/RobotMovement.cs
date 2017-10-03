@@ -28,7 +28,7 @@ public class RobotMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		NetworkUpdate();
-        if (canMove && robotManager.isOwner){
+        if (canMove && robotManager.networkObject.IsOwner){
 			UpdateMovement();
         }else{
             Animate(robotManager.networkObject.x, robotManager.networkObject.y);
