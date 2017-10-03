@@ -7,11 +7,7 @@ public class RobotFollow : MonoBehaviour {
 	public Camera FrontCamera;
 	public Camera BackCamera;
 
-	public bool camIsInFront;
-	// Use this for initialization
-	void Start () {
-		
-	}
+	bool camIsInFront;
 	
 	// Update is called once per frame
 	void Update () {
