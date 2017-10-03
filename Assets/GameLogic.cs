@@ -19,9 +19,7 @@ public class GameLogic : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Server is running");
-            Debug.Log("please rerun a instance and connect to this IP");
-            Debug.Log(Network.player.ipAddress);
+			
             NetworkManager.Instance.Networker.playerConnected += (player, sender) =>
             {
                 onPlayerConnect(player, sender);
