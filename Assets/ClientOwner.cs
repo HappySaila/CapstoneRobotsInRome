@@ -15,4 +15,9 @@ public class ClientOwner : MonoBehaviour {
         this.robot = robot;
         //enable/disable audiolisteners and camera.
     }
+
+    void Update()
+    {
+        
+    }
 }

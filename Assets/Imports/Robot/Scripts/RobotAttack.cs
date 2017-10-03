@@ -23,6 +23,7 @@ public class RobotAttack : MonoBehaviour {
 		UpdateFire ();
 		//draw debug ray
 
+        //TODO: Speech bubble functionality - remove when doing speech bubble
 		if (Input.GetMouseButtonDown (2)){
 			SpeechBubble.Instance.Display ("Welcome to this great game. \n This is cool.", true, false);
 		}

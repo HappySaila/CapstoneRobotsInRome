@@ -64,7 +64,6 @@ public class RobotMovement : MonoBehaviour {
 		velocityChange.y = 0;
 
 		rigid.AddForce (velocityChange, ForceMode.VelocityChange);
-
 		//Look rotation
 		transform.Rotate (0, Input.GetAxis ("Horizontal") * turnSpeed * Time.deltaTime, 0);
 	}
