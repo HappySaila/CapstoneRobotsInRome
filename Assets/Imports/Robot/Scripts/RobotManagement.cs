@@ -19,8 +19,8 @@ public class RobotManagement : RobotBehavior {
 
 	[HideInInspector]public RobotMovement robotMovement;
 	[HideInInspector]public RobotAttack robotAttack;
-	[HideInInspector]public RobotLaborerControl robotLaborerControl;
 	[HideInInspector]public RobotFollow robotFollow;
+    [HideInInspector]public RobotLaborerControl robotLaborerControl;
 	[HideInInspector]public Rigidbody rigid;
 
 	// Use this for initialization
@@ -80,11 +80,6 @@ public class RobotManagement : RobotBehavior {
 		//set player to laborer
 		robotLaborerControl.CallSetLaborer ();
 		robotLaborerControl.isIdleLaborer = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
 	}
 
     public void SendInputData(float x, float y)
