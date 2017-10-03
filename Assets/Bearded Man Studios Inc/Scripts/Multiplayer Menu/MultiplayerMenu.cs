@@ -241,4 +241,8 @@ public class MultiplayerMenu : MonoBehaviour
 		if (getLocalNetworkConnections)
 			NetWorker.EndSession();
 	}
+
+    public void LaunchSinglePlayer(){
+        SceneManager.LoadScene("SinglePlayer");
+    }
 }
