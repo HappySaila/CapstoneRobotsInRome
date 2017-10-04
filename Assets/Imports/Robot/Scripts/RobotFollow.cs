@@ -44,6 +44,12 @@ public class RobotFollow : MonoBehaviour {
 		BackCamera.gameObject.GetComponent<AudioListener>().enabled = false;
     }
 
+    public void EnableCameras()
+    {
+        FrontCamera.enabled = true;
+        BackCamera.enabled = true;
+    }
+
     public void DisableAudioListener(){
 		GetComponentInChildren<AudioListener>().enabled = false;
 	}

@@ -33,7 +33,7 @@ public class CrowdSpawnScript : MonoBehaviour {
 	float TimeCount = 0;
 	void Update () {
 		TimeCount += Time.deltaTime;
-		if(TimeCount>2f){
+		if(TimeCount>3.0f){
 			TimeCount = 0f;
 			CallEachCrowdMember ();
 		}

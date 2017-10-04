@@ -21,10 +21,15 @@ public class UIManager : MonoBehaviour {
     }
 
     public void MultiplayerClicked(){
+        SceneManager.LoadScene("login");
+    }
+
+    public void loggedIn()
+    {
         SceneManager.LoadScene("MultiplayerMenu");
     }
 
-	public void BackClicked()
+    public void BackClicked()
 	{
 		SceneManager.LoadScene("MainMenu");
 	}
