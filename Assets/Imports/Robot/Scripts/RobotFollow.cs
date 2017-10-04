@@ -6,25 +6,42 @@ public class RobotFollow : MonoBehaviour {
 	public Transform RobotToLookAt;
 	public Camera FrontCamera;
 	public Camera BackCamera;
+    FlyCamera flyCamera;
 
 	bool camIsInFront;
+    public float flySpeed;
 	
+    void Start(){
+        flyCamera = GetComponentInChildren<FlyCamera>();
+    }
 	// Update is called once per frame
 	void Update () {
 		Orientate ();
-		Follow ();
-		if (Input.GetKeyDown (KeyCode.E)){
-			SwitchCamera ();
+        Follow ();
+        CameraSwitch();
+		
+	}
+
+    public void EnableFreeFly(){
+        DisableCameras();
+    }
+
+    void CameraSwitch(){
+		if (Input.GetKeyDown(KeyCode.E))
+		{
+			SwitchCamera();
 		}
 
-		if (Input.GetKeyUp (KeyCode.E)){
-			SwitchCamera ();
+		if (Input.GetKeyUp(KeyCode.E))
+		{
+			SwitchCamera();
 		}
-	}
+    }
 
     public void DisableCameras(){
 		FrontCamera.enabled = false;
         BackCamera.enabled = false;
+		BackCamera.gameObject.GetComponent<AudioListener>().enabled = false;
     }
 
     public void DisableAudioListener(){
@@ -57,4 +74,9 @@ public class RobotFollow : MonoBehaviour {
 		FrontCamera.GetComponent <Collider>().enabled = false;
 		BackCamera.GetComponent <Collider>().enabled = false;
 	}
+
+    public void SetColliders(bool state){
+		FrontCamera.gameObject.GetComponent<Collider>().enabled = state;
+		BackCamera.gameObject.GetComponent<Collider>().enabled = state;
+    }
 }

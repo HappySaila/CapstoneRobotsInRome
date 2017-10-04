@@ -39,6 +39,10 @@ public class RSLaborerControl : MonoBehaviour
         timeMachine = t;
         isBuilding = true;
 		agent.enabled = false;
+
+        //add to time machine T laborer available to respawn
+        t.AddLaborerToAvailableLaborer(GetComponentInParent<RSManager>());
+        print("Added laborer");
     }
 
 	public void CallSetLaborer()
@@ -92,6 +96,13 @@ public class RSLaborerControl : MonoBehaviour
 			trigger.enabled = false;
 		}
 	}
+
+    public void Reset()
+    {
+        isBuilding = false;
+        isFighter = true;
+        isIdleLaborer = false;
+    }
 
 }
 

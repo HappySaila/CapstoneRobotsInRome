@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TimeMachine : MonoBehaviour {
-    public bool isBlue;
+	public static TimeMachine redTimeMachine;
+	public static TimeMachine blueTimeMachine;
+
+    public bool isRed;
     public Transform timeMachine;
     public Transform initialPosition;
     public Transform targetPosition;
@@ -13,17 +16,22 @@ public class TimeMachine : MonoBehaviour {
 	public float buildSpeedMultiplier;
     float maxBuildSpeed;
 
+    public Queue<RSManager> AvailableLaborers = new Queue<RSManager>();
+
 	// Use this for initialization
 	void Start () {
+        if (isRed){
+            redTimeMachine = this;
+        } else {
+            blueTimeMachine = this;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButton(0)){
-            Build();
-        }
-        if (Input.GetMouseButton(1)){
-            currentProgress = 0;
+        if (Input.GetMouseButtonDown(1))
+        {
+			Debug.LogFormat("Available {0}", AvailableLaborers.Count);
         }
 	}
 
@@ -55,6 +63,14 @@ public class TimeMachine : MonoBehaviour {
         }
 
     }
+
+    public void AddLaborerToAvailableLaborer(RSManager controller)
+	{
+		//if (AvailableLaborers == null){
+		//	AvailableLaborers = new Queue<RSManager>();
+		//}
+		AvailableLaborers.Enqueue(controller);
+	}
 
 
 }
