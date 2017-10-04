@@ -7,11 +7,7 @@ public class RobotFollow : MonoBehaviour {
 	public Camera FrontCamera;
 	public Camera BackCamera;
 
-	public bool camIsInFront;
-	// Use this for initialization
-	void Start () {
-		
-	}
+	bool camIsInFront;
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,8 +24,18 @@ public class RobotFollow : MonoBehaviour {
 
     public void DisableCameras(){
 		FrontCamera.enabled = false;
-        BackCamera.enabled = false;    
+        BackCamera.enabled = false;
     }
+
+    public void EnableCameras()
+    {
+        FrontCamera.enabled = true;
+        BackCamera.enabled = true;
+    }
+
+    public void DisableAudioListener(){
+		GetComponentInChildren<AudioListener>().enabled = false;
+	}
 
 	void Follow(){
 		//camera will lerp tranform to back/front position

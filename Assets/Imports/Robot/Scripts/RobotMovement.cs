@@ -28,7 +28,7 @@ public class RobotMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		NetworkUpdate();
-        if (canMove && robotManager.isOwner){
+        if (canMove && robotManager.networkObject.IsOwner){
 			UpdateMovement();
         }else{
             Animate(robotManager.networkObject.x, robotManager.networkObject.y);
@@ -64,7 +64,6 @@ public class RobotMovement : MonoBehaviour {
 		velocityChange.y = 0;
 
 		rigid.AddForce (velocityChange, ForceMode.VelocityChange);
-
 		//Look rotation
 		transform.Rotate (0, Input.GetAxis ("Horizontal") * turnSpeed * Time.deltaTime, 0);
 	}
