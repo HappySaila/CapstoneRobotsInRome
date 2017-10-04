@@ -41,7 +41,7 @@ public class TimeMachine : MonoBehaviour {
 
     public void EndGame(){
         //team has won. Show end Game Screen
-        SceneManager.LoadScene("MultiplayerMenu");
+        SceneManager.LoadScene("GameOverMenu");
     }
 
     private void OnTriggerEnter(Collider col)
