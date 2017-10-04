@@ -18,7 +18,7 @@ public class LoginScript : APIScript
         bool registered = Login(username.text, password.text);
         if (registered)
         {
-            this.enabled = false;
+            UIManager.instance.loggedIn();
         }
     }
 }

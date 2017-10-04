@@ -21,27 +21,55 @@ Platform assembly: C:\Users\SMLCAR009\Documents\capstone\CapstoneRobotsInRome\Wi
 Loading C:\Users\SMLCAR009\Documents\capstone\CapstoneRobotsInRome\WinBuild_Data\Managed\BeardedManStudios.dll into Unity Child Domain
 Platform assembly: C:\Users\SMLCAR009\Documents\capstone\CapstoneRobotsInRome\WinBuild_Data\Managed\ForgeNetworkingCommon.dll (this message is harmless)
 Loading C:\Users\SMLCAR009\Documents\capstone\CapstoneRobotsInRome\WinBuild_Data\Managed\ForgeNetworkingCommon.dll into Unity Child Domain
-- Completed reload, in  0.054 seconds
+- Completed reload, in  0.121 seconds
 Platform assembly: C:\Users\SMLCAR009\Documents\capstone\CapstoneRobotsInRome\WinBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\SMLCAR009\Documents\capstone\CapstoneRobotsInRome\WinBuild_Data\Managed\System.dll (this message is harmless)
-desktop: 1600x900 60Hz; virtual: 2966x900 at -1366,0
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.138365 ms
+UnloadTime: 1.684145 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 31b8 -> priority: 1 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.408486 ms
+  Thread -> id: 33d8 -> priority: 1 
+The referenced script on this Behaviour (Game Object 'Register') is missing!
+ 
+(Filename:  Line: 1754)
 
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1295.
-Total: 0.868344 ms (FindLiveObjects: 0.154863 ms CreateObjectMapping: 0.048592 ms MarkObjects: 0.641579 ms  DeleteObjects: 0.022518 ms)
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.493224 ms
 
-ye boi
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 502.
+Total: 0.498172 ms (FindLiveObjects: 0.043851 ms CreateObjectMapping: 0.018567 ms MarkObjects: 0.420345 ms  DeleteObjects: 0.014617 ms)
+
+
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-event listener created
+{"msg":"API is running again"}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+54.202.37.101:1337/api/users/?username=m&hashedPassword=6F8F57715090DA2632453988D9A1501B&salt=none
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.530962 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 579.
+Total: 0.714270 ms (FindLiveObjects: 0.093234 ms CreateObjectMapping: 0.043456 ms MarkObjects: 0.570863 ms  DeleteObjects: 0.006320 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.820146 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1342.
+Total: 1.066664 ms (FindLiveObjects: 0.112197 ms CreateObjectMapping: 0.062814 ms MarkObjects: 0.866369 ms  DeleteObjects: 0.024098 ms)
 
