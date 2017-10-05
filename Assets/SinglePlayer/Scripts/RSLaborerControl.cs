@@ -19,18 +19,21 @@ public class RSLaborerControl : MonoBehaviour
 
 	void Start()
 	{
-		rigid = GetComponent<Rigidbody>();
-		anim = GetComponent<Animator>();
-		agent = GetComponent<NavMeshAgent>();
-		agent.updateRotation = false;
 
-		agent.enabled = false;
+        rigid = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+		agent.updateRotation = false;
 	}
 
-	// Update is called once per frame
-	void Update()
+    private void Awake()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
 	{
-		if (agent.enabled == true)
+		if (agent.enabled && !isFighter)
 		{
 			transform.forward = -(target - transform.position);
 			agent.SetDestination(target);
@@ -63,7 +66,7 @@ public class RSLaborerControl : MonoBehaviour
 	public void CallSetLaborer()
 	{
         if (rigid.velocity.magnitude < 0.01f){
-			Invoke("SetLaborer", 3);
+            SetLaborer();
         } else {
             Invoke("CallSetLaborer", 0.2f);
         }

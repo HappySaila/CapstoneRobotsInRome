@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RSMovement : MonoBehaviour {
 	[HideInInspector] public bool canMove = true;
+    Transform AITarget;
     public float turnSpeed;
     public float moveSpeed;
     float maxVelocityChange = 5;
@@ -12,6 +14,7 @@ public class RSMovement : MonoBehaviour {
     Animator anim;
     Rigidbody rigid;
     RSManager robotManager;
+    NavMeshAgent agent;
 
 	int numberOfAnimations = 4;
 	int count = 0;
@@ -21,13 +24,28 @@ public class RSMovement : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		rigid = GetComponent<Rigidbody>();
         robotManager = GetComponentInParent<RSManager>();
+		agent = GetComponent<NavMeshAgent>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (canMove)
 		{
-			UpdateMovement();
+            if (!robotManager.isAI)
+            {
+                UpdateMovement();
+            }
+            else
+            {
+                AIControl();
+            }
+
+			//clamp y position
+			float currentY = transform.position.y;
+			if (currentY > -0.5f)
+			{
+				transform.position = new Vector3(transform.position.x, Mathf.Clamp(currentY, -3.5f, -0.5f), transform.position.z);
+			}
 		}
 	}
 
@@ -43,12 +61,22 @@ public class RSMovement : MonoBehaviour {
 
 	void UpdateMovement()
 	{
-		float y = Input.GetAxis("Vertical");
-		float x = Input.GetAxis("Horizontal");
+		float x = 0;
+		float y = 0;
+        if (!robotManager.isAI){
+			y = Input.GetAxis("Vertical");
+			x = Input.GetAxis("Horizontal");
+		}
+            
 
-		//update animator
+        //update animator
+        //will only animate for the character controlling the robot
+        //therefore will only animate if the back camera is enabled
 		Animate(x, y);
 
+		//Look rotation
+		transform.Rotate(0, x * turnSpeed * Time.deltaTime, 0);
+            
 		//Movement
 		Vector3 targetVelocity = y * -transform.forward;
 		targetVelocity *= moveSpeed;
@@ -58,16 +86,7 @@ public class RSMovement : MonoBehaviour {
 		velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
 		velocityChange.y = 0;
 
-		rigid.AddForce(velocityChange, ForceMode.VelocityChange);
-
-		//Look rotation
-		transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
-
-        //clamp y position
-        float currentY = transform.position.y;
-        if (currentY > -0.5f){
-			transform.position = new Vector3(transform.position.x, Mathf.Clamp(currentY, -3.5f, -0.5f), transform.position.z);
-		}
+        rigid.AddForce(velocityChange, ForceMode.VelocityChange);
             
 	}
 
@@ -92,4 +111,18 @@ public class RSMovement : MonoBehaviour {
 			anim.SetTrigger("RandomIdle");
 		}
 	}
+
+    void AIControl(){
+        if (AITarget == null){
+            GetAITarget();
+        }
+
+        agent.SetDestination(AITarget.position);
+    }
+
+    void GetAITarget(){
+		AITarget = TimeMachine.blueTimeMachine.targetPosition;
+    }
+
+
 }
