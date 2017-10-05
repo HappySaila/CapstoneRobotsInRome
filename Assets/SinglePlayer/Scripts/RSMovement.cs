@@ -62,6 +62,13 @@ public class RSMovement : MonoBehaviour {
 
 		//Look rotation
 		transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
+
+        //clamp y position
+        float currentY = transform.position.y;
+        if (currentY > -0.5f){
+			transform.position = new Vector3(transform.position.x, Mathf.Clamp(currentY, -3.5f, -0.5f), transform.position.z);
+		}
+            
 	}
 
 	void Animate(float x, float y)

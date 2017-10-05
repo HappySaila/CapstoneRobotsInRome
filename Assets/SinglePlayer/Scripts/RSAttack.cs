@@ -26,6 +26,8 @@ public class RSAttack : MonoBehaviour {
 		{
 			canRam = false;
 			anim.SetTrigger("Ram");
+            rigid.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY
+                | RigidbodyConstraints.FreezeRotationZ;
 		}
 	}
 
@@ -34,6 +36,8 @@ public class RSAttack : MonoBehaviour {
 		if (isRamming)
 		{
 			isRamming = false;
+			rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY
+				| RigidbodyConstraints.FreezeRotationZ;
 			return;
 		}
 

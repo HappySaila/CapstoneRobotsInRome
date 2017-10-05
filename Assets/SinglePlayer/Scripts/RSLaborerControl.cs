@@ -9,7 +9,7 @@ public class RSLaborerControl : MonoBehaviour
 	public Transform target;
 	NavMeshAgent agent;
 	SphereCollider trigger;
-	public Rigidbody rigid;
+	Rigidbody rigid;
 	Animator anim;
     TimeMachine timeMachine;
 
@@ -48,7 +48,12 @@ public class RSLaborerControl : MonoBehaviour
 
 	public void CallSetLaborer()
 	{
-		Invoke("SetLaborer", 3);
+        if (rigid.velocity.magnitude < 0.01f){
+			Invoke("SetLaborer", 3);
+        } else {
+            Invoke("CallSetLaborer", 0.2f);
+        }
+            
 	}
 
 	void SetLaborer()
