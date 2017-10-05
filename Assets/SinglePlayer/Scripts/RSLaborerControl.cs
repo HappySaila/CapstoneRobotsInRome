@@ -9,7 +9,7 @@ public class RSLaborerControl : MonoBehaviour
 	public Transform target;
 	NavMeshAgent agent;
 	SphereCollider trigger;
-	Rigidbody rigid;
+	public Rigidbody rigid;
 	Animator anim;
     TimeMachine timeMachine;
 

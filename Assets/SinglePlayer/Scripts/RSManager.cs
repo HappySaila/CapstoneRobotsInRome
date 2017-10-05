@@ -32,10 +32,6 @@ public class RSManager : MonoBehaviour {
 			robotFollow.enabled = false;
 			robotMovement.moveSpeed = 0;
 			robotAttack.canRam = false;
-
-			//things james added to get ai to work
-			agent.enabled = true;
-			robotLaborerControl.enabled = false;
 		}
 	}
 
