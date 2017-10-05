@@ -54,7 +54,7 @@ public class RSAIAttackScript : MonoBehaviour {
 
 		UpdateFire ();
 		if (agent.isActiveAndEnabled) {
-			agent.SetDestination (AIobjective.position);
+			//agent.SetDestination (AIobjective.position);
 		}
 	}
 

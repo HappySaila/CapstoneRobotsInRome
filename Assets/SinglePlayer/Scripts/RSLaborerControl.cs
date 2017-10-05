@@ -6,7 +6,7 @@ public class RSLaborerControl : MonoBehaviour
 	//destination that the AI will move to
 	public Transform redConstructionSite;
 	public Transform blueConstructionSite;
-	public Transform target;
+    Vector3 target;
 	NavMeshAgent agent;
 	SphereCollider trigger;
 	Rigidbody rigid;
@@ -30,9 +30,23 @@ public class RSLaborerControl : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (agent.enabled == true)
+		{
+			transform.forward = -(target - transform.position);
+			agent.SetDestination(target);
+			if (Vector3.Distance(target, transform.position) < 1.5f)
+			{
+				//target has reached its destination and must start building
+				anim.SetBool("isBuilding", true);
+				agent.enabled = false;
+			}
+		}
+
         if (isBuilding){
             timeMachine.Build();
         }
+
+            
 	}
 
     public void StartBuilding(TimeMachine t){
@@ -70,11 +84,6 @@ public class RSLaborerControl : MonoBehaviour
 			RigidbodyConstraints.FreezeRotationY;
 	}
 
-	public void SetTarget(Transform target)
-	{
-		this.target = target;
-	}
-
 	void OnTriggerStay(Collider col)
 	{
         if (col.GetComponentInParent<RSManager>() != null)
@@ -97,8 +106,10 @@ public class RSLaborerControl : MonoBehaviour
 			transform.up = Vector2.up;
 			anim.SetTrigger("Spin");
 			agent.enabled = true;
-            target = col.GetComponentInParent<RSManager>().isRed ? redConstructionSite : blueConstructionSite;
-			agent.SetDestination(target.position);
+            target = col.GetComponentInParent<RSManager>().isRed ? 
+                        TimeMachine.redTimeMachine.targetPosition.position : 
+                        TimeMachine.blueTimeMachine.targetPosition.position;
+			agent.SetDestination(target);
 			trigger.enabled = false;
 		}
 	}

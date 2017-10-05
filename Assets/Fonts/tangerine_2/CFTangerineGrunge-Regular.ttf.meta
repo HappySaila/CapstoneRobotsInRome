@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c3fcd22aca63f46be8636aabdf5a5302
+timeCreated: 1507238970
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CF Tangerine Grunge PERSONAL
+  fontNames:
+  - CF Tangerine Grunge PERSONAL
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
