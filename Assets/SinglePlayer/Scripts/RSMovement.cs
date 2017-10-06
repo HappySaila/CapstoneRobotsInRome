@@ -20,6 +20,8 @@ public class RSMovement : MonoBehaviour {
 
 	int numberOfAnimations = 4;
 	int count = 0;
+    bool inBase = true;
+    [HideInInspector] public bool isOnePlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -73,8 +75,14 @@ public class RSMovement : MonoBehaviour {
 		float x = 0;
 		float y = 0;
         if (!robotManager.isAI){
-			y = Input.GetAxis("Vertical");
-			x = Input.GetAxis("Horizontal");
+            if (isOnePlayer){
+				y = Input.GetAxis("Vertical");
+				x = Input.GetAxis("Horizontal");
+            } else {
+                y = Input.GetMouseButtonDown(0) ? 1 : 0;
+                x = Input.GetAxis("Mouse X");
+            }
+                
 		}
             
 
@@ -153,7 +161,7 @@ public class RSMovement : MonoBehaviour {
         foreach (RSManager robot in robots)
         {
             //if the current robot is not on our team
-            if (robotManager.isRed != robot.isRed){
+            if (robotManager.isRed != robot.isRed && !robot.robotMovement.inBase){
                 if (currentTarget == null){
                     currentTarget = robot;
                 } else {
@@ -166,7 +174,16 @@ public class RSMovement : MonoBehaviour {
         }
 
         robotTarget = currentTarget;
-        AITarget = robotTarget.robotMovement.transform;
+        if (robotTarget!=null){
+			AITarget = robotTarget.robotMovement.transform;
+        } else{
+            return;
+        }
+            
+        if (robotTarget.robotMovement.inBase){
+            robotTarget = null;
+            AITarget = GameObject.Find("Arena").transform;
+        }
     }
 
     public IEnumerator FindTarget(){
@@ -175,6 +192,14 @@ public class RSMovement : MonoBehaviour {
         StartCoroutine(FindTarget());
 
         //TODO: stop searching if the robot is dead
+    }
+
+    public void enterBase(){
+        inBase = true;
+    }
+
+    public void exitBase(){
+        inBase = false;
     }
 
 

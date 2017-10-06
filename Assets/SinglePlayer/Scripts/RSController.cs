@@ -63,5 +63,14 @@ public class RSController : MonoBehaviour {
 	public void SetTeam(bool isRed)
 	{
 		this.isRed = isRed;
+        GetComponentInChildren<ColorRobot>().SetColor(isRed);
 	}
+
+    public void SetViewPort(bool playerOne){
+        if (playerOne){
+            GetComponentInChildren<RSManager>().GetComponentInChildren<RobotFollow>().BackCamera.rect = new Rect(-0.5f, 0, 1, 1);
+        } else {
+			GetComponentInChildren<RSManager>().GetComponentInChildren<RobotFollow>().BackCamera.rect = new Rect(0.5f, 0, 1, 1);
+		}
+    }
 }

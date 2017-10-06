@@ -66,11 +66,7 @@ public class RSManager : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isAI){
-            Die();
-        }
-
-        if (rigid.velocity.magnitude > SpeedCap){
+        if (rigid.velocity.magnitude > SpeedCap && isAI){
             rigid.velocity = rigid.velocity.normalized * SpeedCap;
         }
     }
