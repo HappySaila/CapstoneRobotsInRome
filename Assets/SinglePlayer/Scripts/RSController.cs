@@ -7,6 +7,7 @@ public class RSController : MonoBehaviour {
     public FlyCamera flyCamera;
 	public bool isAI;
     public bool isRed;
+    public bool isPlayerOne;
 
     private void Start()
     {
@@ -67,10 +68,15 @@ public class RSController : MonoBehaviour {
 	}
 
     public void SetViewPort(bool playerOne){
+		isPlayerOne = playerOne;
         if (playerOne){
-            GetComponentInChildren<RSManager>().GetComponentInChildren<RobotFollow>().BackCamera.rect = new Rect(-0.5f, 0, 1, 1);
-        } else {
-			GetComponentInChildren<RSManager>().GetComponentInChildren<RobotFollow>().BackCamera.rect = new Rect(0.5f, 0, 1, 1);
-		}
-    }
+            Rect rect = new Rect(-0.5f, 0, 1, 1);
+			GetComponentInChildren<RSManager>().GetComponentInChildren<RobotFollow>().BackCamera.rect = rect;
+			GetComponentInChildren<Camera>().rect = rect;
+		} else {
+            Rect rect = new Rect(0.5f, 0, 1, 1);
+			GetComponentInChildren<RSManager>().GetComponentInChildren<RobotFollow>().BackCamera.rect = rect;
+			GetComponentInChildren<Camera>().rect = rect;
+        }
+	}
 }

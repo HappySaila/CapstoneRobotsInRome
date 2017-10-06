@@ -36,7 +36,14 @@ public class RSMovement : MonoBehaviour {
 			anim.SetBool("Forward", true);
 			anim.SetFloat("x", 0.5f);
         }
+
+        Invoke("SetPlayer", 0.1f);
 	}
+
+    void SetPlayer(){
+        isOnePlayer = GetComponentInParent<RSController>().isPlayerOne;
+        GetComponent<RSAttack>().isPlayerOne = isOnePlayer;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -79,7 +86,7 @@ public class RSMovement : MonoBehaviour {
 				y = Input.GetAxis("Vertical");
 				x = Input.GetAxis("Horizontal");
             } else {
-                y = Input.GetMouseButtonDown(0) ? 1 : 0;
+                y = Input.GetMouseButton(0) ? 1 : 0;
                 x = Input.GetAxis("Mouse X");
             }
                 
@@ -122,7 +129,13 @@ public class RSMovement : MonoBehaviour {
 
 	public void UpdateTaunt()
 	{
-		if (Input.GetMouseButtonDown(1))
+        int taunt;
+        if (isOnePlayer){
+            taunt = Input.GetKeyDown(KeyCode.Q) ? 1 : 0;
+        } else {
+            taunt = Input.GetMouseButtonDown(2) ? 1 : 0;
+		}
+		if (taunt > 0)
 		{
 			anim.SetInteger("IdleNumber", count++ % numberOfAnimations);
 			anim.SetTrigger("RandomIdle");

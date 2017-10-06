@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RSAttack : MonoBehaviour {
+    [HideInInspector] public bool isPlayerOne;
 	public float ramDelay;
 	public float ramDistance;
 	public float ramForce;
@@ -22,7 +23,14 @@ public class RSAttack : MonoBehaviour {
 
 	void UpdateFire()
 	{
-		if (Input.GetAxis("Jump") > 0 && canRam)
+        float attack;
+        if (isPlayerOne){
+			attack = Input.GetAxis("Jump");
+        } else {
+            attack = Input.GetMouseButtonDown(1) ? 1 : 0;
+        }
+            
+		if (attack > 0 && canRam)
 		{
             InitiateRam();
 		}
