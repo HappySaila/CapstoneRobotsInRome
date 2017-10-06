@@ -31,6 +31,8 @@ public class RSMovement : MonoBehaviour {
 
         if (robotManager.isAI){
             StartCoroutine(FindTarget());
+			anim.SetBool("Forward", true);
+			anim.SetFloat("x", 0.5f);
         }
 	}
 	
@@ -126,7 +128,9 @@ public class RSMovement : MonoBehaviour {
 
         agent.SetDestination(AITarget.position);
         transform.LookAt(AITarget);
-        if (robotTarget == null){
+		transform.Rotate(0, 180, 0);
+
+		if (robotTarget == null){
             return;
         }
 

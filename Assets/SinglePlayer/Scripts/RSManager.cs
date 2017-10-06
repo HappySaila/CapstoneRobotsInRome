@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class RSManager : MonoBehaviour {
 	public bool isAI;
 	public bool isRed;
+    public float SpeedCap;
 	NavMeshAgent agent;
 
 	[Tooltip("Collider that makes robot hover above ground.")] public SphereCollider hoverBase;
@@ -31,7 +32,6 @@ public class RSManager : MonoBehaviour {
             robotFollow.DisableCameras();
 			robotFollow.enabled = false;
 			robotMovement.moveSpeed = 0;
-			robotAttack.canRam = false;
 		}
 	}
 
@@ -56,6 +56,7 @@ public class RSManager : MonoBehaviour {
 
 
 		//set player to laborer
+		robotLaborerControl.isFighter = false;
 		robotLaborerControl.CallSetLaborer();
 		robotLaborerControl.isIdleLaborer = true;
 
@@ -67,6 +68,10 @@ public class RSManager : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0) && !isAI){
             Die();
+        }
+
+        if (rigid.velocity.magnitude > SpeedCap){
+            rigid.velocity = rigid.velocity.normalized * SpeedCap;
         }
     }
 }

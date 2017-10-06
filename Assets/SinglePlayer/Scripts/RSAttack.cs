@@ -29,6 +29,9 @@ public class RSAttack : MonoBehaviour {
 	}
 
     public void InitiateRam(){
+        if (!canRam){
+            return;
+        }
 		canRam = false;
 		anim.SetTrigger("Ram");
 		rigid.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY
