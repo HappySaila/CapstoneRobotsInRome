@@ -24,12 +24,16 @@ public class RSAttack : MonoBehaviour {
 	{
 		if (Input.GetAxis("Jump") > 0 && canRam)
 		{
-			canRam = false;
-			anim.SetTrigger("Ram");
-            rigid.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY
-                | RigidbodyConstraints.FreezeRotationZ;
+            InitiateRam();
 		}
 	}
+
+    public void InitiateRam(){
+		canRam = false;
+		anim.SetTrigger("Ram");
+		rigid.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY
+			| RigidbodyConstraints.FreezeRotationZ;
+    }
 
 	public void Ram()
 	{

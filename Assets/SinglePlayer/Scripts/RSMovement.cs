@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class RSMovement : MonoBehaviour {
 	[HideInInspector] public bool canMove = true;
     Transform AITarget;
+    RSManager robotTarget;
+    AIMovementData AIData;
     public float turnSpeed;
     public float moveSpeed;
     float maxVelocityChange = 5;
@@ -25,6 +27,11 @@ public class RSMovement : MonoBehaviour {
 		rigid = GetComponent<Rigidbody>();
         robotManager = GetComponentInParent<RSManager>();
 		agent = GetComponent<NavMeshAgent>();
+        AIData = GetComponent<AIMovementData>();
+
+        if (robotManager.isAI){
+            StartCoroutine(FindTarget());
+        }
 	}
 	
 	// Update is called once per frame
@@ -33,7 +40,7 @@ public class RSMovement : MonoBehaviour {
 		{
             if (!robotManager.isAI)
             {
-                UpdateMovement();
+                UpdateMovement();AITarget = TimeMachine.blueTimeMachine.targetPosition;
             }
             else
             {
@@ -114,14 +121,56 @@ public class RSMovement : MonoBehaviour {
 
     void AIControl(){
         if (AITarget == null){
-            GetAITarget();
+            return;
         }
 
         agent.SetDestination(AITarget.position);
+        transform.LookAt(AITarget);
+        if (robotTarget == null){
+            return;
+        }
+
+        if (robotTarget.robotLaborerControl.isFighter){
+            //if distance is shorter then ram is distance - ram
+            if (TargetDistance() < AIData.GetRamDistance()){
+                robotManager.robotAttack.InitiateRam();
+            }
+        }
+    }
+
+    float TargetDistance(){
+        return Vector3.Distance(transform.position, robotTarget.robotMovement.transform.position);
     }
 
     void GetAITarget(){
-		AITarget = TimeMachine.blueTimeMachine.targetPosition;
+        RSManager[] robots = FindObjectsOfType<RSManager>();
+
+        RSManager currentTarget = null;
+        foreach (RSManager robot in robots)
+        {
+            //if the current robot is not on our team
+            if (robotManager.isRed != robot.isRed){
+                if (currentTarget == null){
+                    currentTarget = robot;
+                } else {
+                    //if the robot is closer than the current target
+                    if (Vector3.Distance(transform.position, robot.transform.position) < Vector3.Distance(transform.position, currentTarget.transform.position)){
+                        currentTarget = robot;
+                    }                    
+                }
+            }
+        }
+
+        robotTarget = currentTarget;
+        AITarget = robotTarget.robotMovement.transform;
+    }
+
+    public IEnumerator FindTarget(){
+        yield return new WaitForSeconds(3);
+        GetAITarget();
+        StartCoroutine(FindTarget());
+
+        //TODO: stop searching if the robot is dead
     }
 
 

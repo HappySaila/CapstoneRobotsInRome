@@ -5,13 +5,14 @@ using UnityEngine;
 public class RSController : MonoBehaviour {
     public RSManager robotManager;
     public FlyCamera flyCamera;
+	public bool isAI;
     public bool isRed;
-    public bool isAI;
 
     private void Start()
     {
         flyCamera = GetComponent<FlyCamera>();
         robotManager = GetComponentInChildren<RSManager>();
+        robotManager.isRed = isRed;
     }
 
     public void Die(){
@@ -58,4 +59,9 @@ public class RSController : MonoBehaviour {
 		robotManager.robotMovement.GetComponent<Animator>().SetTrigger("Respawn");
         robotManager.robotMovement.GetComponent<Animator>().SetBool("IsBuilding", false);
     }
+
+	public void SetTeam(bool isRed)
+	{
+		this.isRed = isRed;
+	}
 }

@@ -15,12 +15,14 @@ public class InitialSpawnManager : MonoBehaviour {
     void SpawnRobots(){
 		foreach (Transform t in RedPositions)
 		{
-            Instantiate(RobotAI, t.position, t.rotation);
+            GameObject robot = Instantiate(RobotAI, t.position, t.rotation);
+            robot.GetComponent<RSController>().SetTeam(true);
 		}
 
 		foreach (Transform t in BluePositions)
 		{
-			Instantiate(RobotAI, t.position, t.rotation);
+			GameObject robot = Instantiate(RobotAI, t.position, t.rotation);
+			robot.GetComponent<RSController>().SetTeam(false);
 		}
     }
 
